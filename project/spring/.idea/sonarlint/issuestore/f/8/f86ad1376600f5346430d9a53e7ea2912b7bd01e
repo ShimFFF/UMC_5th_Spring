@@ -1,0 +1,5 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(€Ü€ï8¦µ‡ŸÁ1
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿Ùû¬8°µ‡ŸÁ1
+Z
+java:S1128"8Remove this unused import 'io.swagger.annotations.Info'.(‚‰ŠŸüÿÿÿÿ8»µ‡ŸÁ1
