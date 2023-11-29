@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="4">
+<module external.linked.project.id="spring" external.linked.project.path="$MODULE_DIR$/../../spring/spring" external.root.project.path="$MODULE_DIR$/../../spring/spring" external.system.id="GRADLE" external.system.module.group="umc" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="e3b4241f-07e5-440b-bb22-951f51bea171" />
   </component>
