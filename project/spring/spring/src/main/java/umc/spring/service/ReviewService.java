@@ -29,10 +29,6 @@ public class ReviewService {
 
     private final ReviewRepository reviewRepository;
 
-    private final StoreRepository storeRepository;
-
-    private final MemberRepository memberRepository;
-
     @Transactional
     public void write(ReviewRequest.writeDTO request)  {
 
