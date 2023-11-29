@@ -129,7 +129,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Gradle: org.junit.platform:junit-platform-engine:1.8.2" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
-    <option name="uniqueId" value="51fca04a-892f-44e5-ad80-533b7f05f6c3" />
+    <option name="uniqueId" value="f87d5c03-62b7-44d2-a7a3-5a87d19d0e4d" />
   </component>
   <component name="TestModuleProperties" production-module="spring.main" />
 </module>
