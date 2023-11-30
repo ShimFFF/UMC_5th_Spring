@@ -9,3 +9,14 @@ P
 java:S2209"5Change this instance-reference to a static reference.(ž¹Ÿùþÿÿÿÿ
 P
 java:S2209"5Change this instance-reference to a static reference.(¼ôþœýÿÿÿÿ
+d
+java:S1128"BRemove this unused import 'umc.spring.repository.StoreRepository'.(È¦àžüÿÿÿÿ8Ÿ÷½€Â1
+]
+java:S1128	"@Remove this unused import 'umc.spring.web.dto.MemberRequestDTO'.(áÑÉÓ8Ÿ÷½€Â1
+^
+java:S1128
+"ARemove this unused import 'umc.spring.web.dto.MemberResponseDTO'.(È†Œæ8Ÿ÷½€Â1
+V
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8Ÿ÷½€Â1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ÿ÷½€Â1
