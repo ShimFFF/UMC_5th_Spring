@@ -10,9 +10,8 @@
         <module name="umc.spring.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="11">
       <module name="umc.spring" target="11" />
-      <module name="umc.spring.main" target="11" />
       <module name="umc.spring.test" target="11" />
     </bytecodeTargetLevel>
   </component>

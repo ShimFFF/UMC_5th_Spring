@@ -1,27 +1,0 @@
-
-g
-java:S1128"JRemove this unused import 'umc.spring.ApiPayload.code.status.ErrorStatus'.(—ªèñ8Û‚ÜÁ1
-g
-java:S1128"ERemove this unused import 'umc.spring.converter.FoodPreferConverter'.(˜øÎúÿÿÿÿ8Û‚ÜÁ1
-c
-java:S1128"ARemove this unused import 'umc.spring.converter.MemberConverter'.(¥´Ÿ–ÿÿÿÿÿ8Û‚ÜÁ1
-Z
-java:S1128	"8Remove this unused import 'umc.spring.domain.FoodCateg'.(­×ë–üÿÿÿÿ8Û‚ÜÁ1
-U
-java:S1128"3Remove this unused import 'umc.spring.domain.User'.(¶¯ıƒüÿÿÿÿ8Û‚ÜÁ1
-^
-java:S1128"ARemove this unused import 'umc.spring.domain.mapping.FoodPerfer'.(Ëß»Ó8Ü‚ÜÁ1
-g
-java:S1128"JRemove this unused import 'umc.spring.exception.handler.FoodCategHandler'.(õÇÏÄ8Ü‚ÜÁ1
-h
-java:S1128"FRemove this unused import 'umc.spring.repository.FoodCategRepository'.(ÒÖº«ùÿÿÿÿ8Ü‚ÜÁ1
-`
-java:S1128"CRemove this unused import 'umc.spring.repository.MemberRepository'.(ÅéÂ¼8‰î‘ÜÁ1
-d
-java:S1128"BRemove this unused import 'umc.spring.repository.StoreRepository'.(È¦àüÿÿÿÿ8‰î‘ÜÁ1
-]
-java:S1128"@Remove this unused import 'umc.spring.web.dto.MemberRequestDTO'.(áÑÉÓ8Ü‚ÜÁ1
-M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8Ü‚ÜÁ1
-Z
-java:S1128"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8Ü‚ÜÁ1
