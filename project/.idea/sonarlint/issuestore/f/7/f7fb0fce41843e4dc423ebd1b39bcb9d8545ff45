@@ -1,0 +1,14 @@
+
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç Ìí
+o
+java:S3008"ZRename this field "StoreRepository" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜Œi
+3
+java:S1118"Hide this public constructor.(ç Ìí
+H
+java:S3010"-Remove this assignment of "memberRepository".(¼ôşœıÿÿÿÿ
+A
+java:S3010",Remove this assignment of "StoreRepository".(ÖÈK
+P
+java:S2209"5Change this instance-reference to a static reference.(¼ôşœıÿÿÿÿ
+J
+java:S2209"5Change this instance-reference to a static reference.(ÖÈK
