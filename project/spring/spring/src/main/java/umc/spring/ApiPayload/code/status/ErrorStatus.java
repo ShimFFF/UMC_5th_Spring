@@ -36,6 +36,12 @@ public enum ErrorStatus implements BaseErrorCode {
     REGION_NAME_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "REGION4004", "이미 존재하는 지역 이름 입니다."),
     REGION_NAME_NOT_MATCH(HttpStatus.BAD_REQUEST, "REGION4005", "지역 이름이 일치하지 않습니다."),
 
+    // Store 관련
+    STORE_NOT_FOUND(HttpStatus.BAD_REQUEST, "STORE4001", "존재하지 않는 가게 입니다."),
+    STORE_NAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "STORE4003", "가게 이름은 필수 입니다."),
+    STORE_NAME_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "STORE4004", "이미 존재하는 가게 이름 입니다."),
+    STORE_NAME_NOT_MATCH(HttpStatus.BAD_REQUEST, "STORE4005", "가게 이름이 일치하지 않습니다."),
+
     // 음식 카테고리 관련
     FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "FOOD_CATEGORY4001", "존재하지 않는 음식 카테고리 입니다.");
 

@@ -107,3 +107,5 @@ m
 =src/main/java/umc/spring/exception/handler/RegoinHandler.java,9\4\94aaeebc8d83c9a4376472d4a87c9420d7f12e97
 b
 2src/main/java/umc/spring/web/dto/StoreRequest.java,9\6\9677a989a3e3b40f1f6a5024391d649995904806
+l
+<src/main/java/umc/spring/exception/handler/StoreHandler.java,a\b\abeeadf3f82973861f0354a0ad2154b6cd10322b
