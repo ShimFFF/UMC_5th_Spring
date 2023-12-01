@@ -1,6 +1,7 @@
 package umc.spring.converter;
 
 import umc.spring.domain.Users;
+import umc.spring.domain.enums.SocialType;
 import umc.spring.web.dto.MemberRequestDTO;
 import umc.spring.web.dto.MemberResponseDTO;
 
@@ -25,7 +26,19 @@ public class MemberConverter {
                 .phone(request.getPhone())
                 .birth(request.getBrith())
                 .address(request.getAddress())
+                .socialType(toSocialType(request.getSocialType()))
                 .foodPerferList(new ArrayList<>())
                 .build();
+    }
+
+    public static SocialType toSocialType(Integer socialType){
+        switch (socialType) {
+            case 1:  return SocialType.KAKAO;
+            case 2: return SocialType.NAVER;
+            case 3: return SocialType.APPLE;
+            case 4: return SocialType.GOOGLE;
+        }
+
+        return SocialType.NONE;
     }
 }

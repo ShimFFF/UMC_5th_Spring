@@ -16,6 +16,7 @@ public class MemberRequestDTO {
         String brith;
         String phone;
         String address;
+        Integer socialType;
         List<Long> foodPerferIdList;
 
     }
