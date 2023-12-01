@@ -1,5 +1,5 @@
 package umc.spring.domain.enums;
 
 public enum SocialType {
-    KAKAO, NAVER, GOOGLE, APPLE
+    KAKAO, NAVER, GOOGLE, APPLE, NONE
 }

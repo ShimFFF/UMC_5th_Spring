@@ -61,9 +61,9 @@ public class Users extends BaseTimeEntitiy {
     @Column(columnDefinition = "VARCHAR(10) default 'USER'", nullable = false)
     private Role role; // 권한 (USER, ADMIN, OWNER)
 
-   // @Enumerated(EnumType.STRING)
-   // @Column(columnDefinition = "VARCHAR(10) ", nullable = false)
-   // private SocialType socialType; //소셜 로그인 타입 (KAKAO, NAVER, GOOGLE, APPLE)
+    @Enumerated(EnumType.STRING)
+    @Column(columnDefinition = "VARCHAR(10) default NONE")
+    private SocialType socialType; //소셜 로그인 타입 (NONE ,KAKAO, NAVER, GOOGLE, APPLE)
 
     private LocalDate inactivatedAt; //탈퇴일
 

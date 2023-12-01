@@ -97,3 +97,5 @@ Z
 *src/main/java/umc/spring/domain/Users.java,d\a\dafb643dd20be4e9c02f6840e60410e84935314c
 f
 6src/main/java/umc/spring/converter/StoreConverter.java,7\a\7a67a97ba1bbfca25aa278159f7d700e14882977
+e
+5src/main/java/umc/spring/domain/enums/SocialType.java,a\6\a6a84c11ec8f7cbaba02162e5435d99c36035e4e
