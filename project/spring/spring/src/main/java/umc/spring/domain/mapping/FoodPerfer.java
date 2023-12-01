@@ -2,7 +2,7 @@ package umc.spring.domain.mapping;
 
 import lombok.*;
 import umc.spring.domain.FoodCateg;
-import umc.spring.domain.User;
+import umc.spring.domain.Users;
 
 import javax.persistence.*;
 
@@ -19,14 +19,14 @@ public class FoodPerfer {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id") //FK
-    private User user;
+    private Users user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "foodCateg_id") //FK
     private FoodCateg foodCateg;
 
     //연관 관계 편의 메서드
-    public void setUser(User user){
+    public void setUser(Users user){
         if(this.user != null)
             user.getFoodPerferList().remove(this);
         this.user = user;

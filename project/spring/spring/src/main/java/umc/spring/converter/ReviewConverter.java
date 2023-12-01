@@ -1,19 +1,13 @@
 package umc.spring.converter;
 
-import lombok.NonNull;
-import lombok.experimental.NonFinal;
 import umc.spring.domain.Store;
 import umc.spring.domain.StoreReview;
-import umc.spring.domain.User;
+import umc.spring.domain.Users;
 import umc.spring.repository.MemberRepository;
 import umc.spring.repository.StoreRepository;
-import umc.spring.web.dto.MemberRequestDTO;
-import umc.spring.web.dto.MemberResponseDTO;
 import umc.spring.web.dto.ReviewRequest;
 
 import javax.persistence.EntityNotFoundException;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public class ReviewConverter {
 
@@ -29,7 +23,7 @@ public class ReviewConverter {
     public static StoreReview toReview(ReviewRequest.writeDTO request){
 
         //User 객체를 찾아서 user에 저장하는 코드
-        User user = memberRepository.findById(request.getUserId())
+        Users users = memberRepository.findById(request.getUserId())
                 .orElseThrow(() -> new EntityNotFoundException("해당하는 회원이 없습니다."));
         //Store 객체를 찾아서 store에 저장하는 코드
         Store store = StoreRepository.findById(request.getStoreId())
@@ -38,7 +32,7 @@ public class ReviewConverter {
 
         return StoreReview.builder()
                 .content(request.getContent())
-                .user(user)
+                .user(users)
                 .store(store)
                 .starPoint(request.getScore())
                 .build();

@@ -27,7 +27,7 @@ public class Store extends BaseTimeEntitiy {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_id") //FK
-    private User user;
+    private Users user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "regoin_id") //FK

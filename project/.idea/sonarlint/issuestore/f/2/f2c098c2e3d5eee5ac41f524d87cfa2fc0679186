@@ -1,22 +1,13 @@
 
-3
-java:S1118"Hide this public constructor.(€¨ø
-I
-java:S3010".Remove this assignment of "missionRepository".(¹Ÿùşÿÿÿÿ
-H
-java:S3010"-Remove this assignment of "memberRepository".(¼ôşœıÿÿÿÿ
+:
+java:S1118"Hide this public constructor.(€¨ø8“¿º‡Â1
 P
-java:S2209"5Change this instance-reference to a static reference.(¹Ÿùşÿÿÿÿ
-P
-java:S2209"5Change this instance-reference to a static reference.(¼ôşœıÿÿÿÿ
-d
-java:S1128"BRemove this unused import 'umc.spring.repository.StoreRepository'.(È¦àüÿÿÿÿ8Ÿ÷½€Â1
-]
-java:S1128	"@Remove this unused import 'umc.spring.web.dto.MemberRequestDTO'.(áÑÉÓ8Ÿ÷½€Â1
-^
-java:S1128
-"ARemove this unused import 'umc.spring.web.dto.MemberResponseDTO'.(È†Œæ8Ÿ÷½€Â1
-V
-java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8Ÿ÷½€Â1
-M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ÿ÷½€Â1
+java:S3010".Remove this assignment of "missionRepository".(¹Ÿùşÿÿÿÿ8—¿º‡Â1
+O
+java:S3010"-Remove this assignment of "memberRepository".(¼ôşœıÿÿÿÿ8™¿º‡Â1
+W
+java:S2209"5Change this instance-reference to a static reference.(¹Ÿùşÿÿÿÿ8›¿º‡Â1
+W
+java:S2209"5Change this instance-reference to a static reference.(¼ôşœıÿÿÿÿ8œ¿º‡Â1
+L
+java:S1905#"*Remove this unnecessary cast to "Mission".(ûšé³øÿÿÿÿ8¢¿º‡Â1

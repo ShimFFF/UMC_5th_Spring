@@ -22,7 +22,7 @@ public class StoreReview extends BaseTimeEntitiy {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id") //FK
-    private User user;
+    private Users user;
 
     @Column(nullable = false, length = 100)
     private String content;

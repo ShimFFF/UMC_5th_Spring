@@ -1,7 +1,7 @@
 package umc.spring.domain.mapping;
 
 import lombok.*;
-import umc.spring.domain.User;
+import umc.spring.domain.Users;
 import umc.spring.domain.Terms;
 import umc.spring.domain.common.BaseTimeEntitiy;
 
@@ -24,5 +24,5 @@ public class TermAgree extends BaseTimeEntitiy {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id") //FK
-    private User user;
+    private Users user;
 }

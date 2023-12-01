@@ -1,19 +1,14 @@
 package umc.spring.converter;
 
 import umc.spring.domain.Mission;
-import umc.spring.domain.User;
+import umc.spring.domain.Users;
 import umc.spring.domain.mapping.MemberMission;
 import umc.spring.repository.MemberRepository;
 import umc.spring.repository.MissionRepository;
-import umc.spring.repository.StoreRepository;
-import umc.spring.web.dto.MemberRequestDTO;
-import umc.spring.web.dto.MemberResponseDTO;
 import umc.spring.web.dto.MissionRequest;
 import umc.spring.web.dto.MissionResponse;
 
 import javax.persistence.EntityNotFoundException;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public class MissionConverter {
 
@@ -34,7 +29,7 @@ public class MissionConverter {
 
     public static MemberMission toMemberMission(MissionRequest.addDTO request){
 
-        User user = memberRepository.findById(request.getMemberId())
+        Users users = memberRepository.findById(request.getMemberId())
                 .orElseThrow(() -> new EntityNotFoundException("해당하는 회원이 없습니다."));
 
         Mission mission = (Mission) missionRepository.findById(request.getMissionId())
@@ -42,7 +37,7 @@ public class MissionConverter {
 
         return MemberMission.builder()
                 .mission(mission)
-                .user(user)
+                .user(users)
                 .build();
     }
 }

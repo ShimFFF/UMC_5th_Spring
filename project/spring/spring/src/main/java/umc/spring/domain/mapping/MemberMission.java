@@ -1,7 +1,7 @@
 package umc.spring.domain.mapping;
 
 import lombok.*;
-import umc.spring.domain.User;
+import umc.spring.domain.Users;
 import umc.spring.domain.Mission;
 import umc.spring.domain.common.BaseTimeEntitiy;
 import umc.spring.domain.enums.MissionStatus;
@@ -26,7 +26,7 @@ public class MemberMission extends BaseTimeEntitiy {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")  //FK
-    private User user;
+    private Users user;
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "varchar(10) default 'GOING'")

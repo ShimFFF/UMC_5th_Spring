@@ -6,7 +6,7 @@ import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.converter.FoodPreferConverter;
 import umc.spring.converter.MemberConverter;
 import umc.spring.domain.FoodCateg;
-import umc.spring.domain.User;
+import umc.spring.domain.Users;
 import umc.spring.domain.mapping.FoodPerfer;
 import umc.spring.exception.handler.FoodCategHandler;
 import umc.spring.repository.FoodCategRepository;
@@ -27,9 +27,9 @@ public class MemberCommandServiceImpl implements MemberCommendService {
     private final FoodCategRepository foodCategRepository;
     @Override
     @Transactional
-    public User signUp(MemberRequestDTO.SignUpDTO request)  {
+    public Users signUp(MemberRequestDTO.SignUpDTO request)  {
 
-        User newUser = MemberConverter.toMember(request);
+        Users newUsers = MemberConverter.toMember(request);
         List<FoodCateg> foodCategoryList = request.getFoodPerferIdList().stream()
                 .map(category -> {
                     return foodCategRepository.findById(category).orElseThrow(() -> new FoodCategHandler(ErrorStatus.FOOD_CATEGORY_NOT_FOUND));
@@ -37,8 +37,8 @@ public class MemberCommandServiceImpl implements MemberCommendService {
 
         List<FoodPerfer> foodPreferList = FoodPreferConverter.toMemberPreferList(foodCategoryList);
 
-        foodPreferList.forEach(foodPrefer -> {foodPrefer.setUser(newUser);});
+        foodPreferList.forEach(foodPrefer -> {foodPrefer.setUser(newUsers);});
 
-        return memberRepository.save(newUser);
+        return memberRepository.save(newUsers);
     }
 }

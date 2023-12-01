@@ -19,7 +19,7 @@ public class PointHistory extends BaseTimeEntitiy {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id") //FK
-    private User user;
+    private Users user;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "store_id") //FK

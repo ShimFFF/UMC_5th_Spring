@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.converter.MemberConverter;
-import umc.spring.domain.User;
+import umc.spring.domain.Users;
 import umc.spring.service.MemberService.MemberCommandServiceImpl;
 import umc.spring.web.dto.MemberRequestDTO;
 import umc.spring.web.dto.MemberResponseDTO;
@@ -23,8 +23,8 @@ public class MemberRestController {
     @PostMapping("/signup") //users/signup으로 접근하면 아래의 메소드를 실행
     public ApiResponse<MemberResponseDTO.SignUpDTO>
             join(@RequestBody @Valid MemberRequestDTO.SignUpDTO request){
-        User user = memberCommandService.signUp(request);
-        return ApiResponse.onSuccess(MemberConverter.toSignUpDTO(user));
+        Users users = memberCommandService.signUp(request);
+        return ApiResponse.onSuccess(MemberConverter.toSignUpDTO(users));
     }
 
 }

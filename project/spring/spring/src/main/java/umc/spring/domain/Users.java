@@ -24,7 +24,8 @@ import java.util.List;
 @DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class User extends BaseTimeEntitiy {
+@Table(name = "MEMBER_TABLE")
+public class Users extends BaseTimeEntitiy {
 
     @Id // Primary Key 라는 것을 알려주는 어노테이션
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 자동으로 값이 생성되는 것을 알려주는 어노테이션
@@ -53,16 +54,16 @@ public class User extends BaseTimeEntitiy {
     private String address;
 
     @Enumerated(EnumType.STRING) //Enum 어노테이션을 사용하면 DB에는 해당 Enum의 이름이 저장됨
-    @Column(columnDefinition = "VARVHAR(10) default 'ACTIVE'", nullable = false)
+    @Column(columnDefinition = "VARCHAR(10) default 'ACTIVE'", nullable = false)
     private Status status; //상태 (ACTIVE, INACTIVE)
 
     @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "VARCHAR(10) default 'USER'", nullable = false)
     private Role role; // 권한 (USER, ADMIN, OWNER)
 
-    @Enumerated(EnumType.STRING)
-    @Column(columnDefinition = "VARCHAR(10) ", nullable = false)
-    private SocialType socialType; //소셜 로그인 타입 (KAKAO, NAVER, GOOGLE, APPLE)
+   // @Enumerated(EnumType.STRING)
+   // @Column(columnDefinition = "VARCHAR(10) ", nullable = false)
+   // private SocialType socialType; //소셜 로그인 타입 (KAKAO, NAVER, GOOGLE, APPLE)
 
     private LocalDate inactivatedAt; //탈퇴일
 
