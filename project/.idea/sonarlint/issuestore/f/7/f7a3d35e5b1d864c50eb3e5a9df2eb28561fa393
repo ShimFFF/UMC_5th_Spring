@@ -1,6 +1,6 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ý¶Åå
-n
-java:S1602""SRemove useless curly braces around statement and then remove useless return keyword(ƒ­Ü–ùÿÿÿÿ
-G
-java:S1602(",Remove useless curly braces around statement(„­·×üÿÿÿÿ
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ý¶Åå8‘œð°Â1
+u
+java:S1602$"SRemove useless curly braces around statement and then remove useless return keyword(ƒ­Ü–ùÿÿÿÿ8–œð°Â1
+N
+java:S1602*",Remove useless curly braces around statement(„­·×üÿÿÿÿ8—œð°Â1

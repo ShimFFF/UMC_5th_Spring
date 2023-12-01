@@ -8,5 +8,7 @@ public class StoreRequest {
     public static class addDTO{
         Long memberId;
         Long regionId;
+        String storeName;
+        String storeAddress;
     }
 }

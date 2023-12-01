@@ -25,6 +25,8 @@ public class MemberCommandServiceImpl implements MemberCommendService {
     private final MemberRepository memberRepository;
 
     private final FoodCategRepository foodCategRepository;
+
+
     @Override
     @Transactional
     public Users signUp(MemberRequestDTO.SignUpDTO request)  {

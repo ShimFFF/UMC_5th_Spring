@@ -30,7 +30,13 @@ public enum ErrorStatus implements BaseErrorCode {
     //Query String에 flag를 받아오는데, 해당 flag가 1인 경우 exception을 발생시킬 예정
     TEMP_EXCEPTION(HttpStatus.BAD_REQUEST, "TEMP4001", "이거는 테스트 exception 발생!"),
 
-    //
+    // Region 관련
+    REGION_NOT_FOUND(HttpStatus.BAD_REQUEST, "REGION4001", "존재하지 않는 지역 입니다."),
+    REGION_NAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "REGION4003", "지역 이름은 필수 입니다."),
+    REGION_NAME_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "REGION4004", "이미 존재하는 지역 이름 입니다."),
+    REGION_NAME_NOT_MATCH(HttpStatus.BAD_REQUEST, "REGION4005", "지역 이름이 일치하지 않습니다."),
+
+    // 음식 카테고리 관련
     FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "FOOD_CATEGORY4001", "존재하지 않는 음식 카테고리 입니다.");
 
     private final HttpStatus httpStatus;

@@ -99,3 +99,11 @@ f
 6src/main/java/umc/spring/converter/StoreConverter.java,7\a\7a67a97ba1bbfca25aa278159f7d700e14882977
 e
 5src/main/java/umc/spring/domain/enums/SocialType.java,a\6\a6a84c11ec8f7cbaba02162e5435d99c36035e4e
+b
+2src/main/java/umc/spring/service/StoreService.java,7\8\789b5c1846c65a56d5ff8343d77fedd0fd2c74f3
+m
+=src/main/java/umc/spring/exception/handler/MemberHandler.java,4\f\4f1863aae829aaca715abdc8a3bace9368124c17
+m
+=src/main/java/umc/spring/exception/handler/RegoinHandler.java,9\4\94aaeebc8d83c9a4376472d4a87c9420d7f12e97
+b
+2src/main/java/umc/spring/web/dto/StoreRequest.java,9\6\9677a989a3e3b40f1f6a5024391d649995904806
