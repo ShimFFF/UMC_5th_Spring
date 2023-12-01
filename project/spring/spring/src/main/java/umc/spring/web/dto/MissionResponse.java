@@ -11,7 +11,7 @@ public class MissionResponse {
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class addDTO{
+    public static class challengeDTO{
         Long memberMissionId;
     }
 }

@@ -12,28 +12,13 @@ import javax.persistence.EntityNotFoundException;
 
 public class MissionConverter {
 
-    private static MissionRepository missionRepository;
-    private static MemberRepository memberRepository;
-
-    //의존성 주입
-    public MissionConverter(MissionRepository missionRepository, MemberRepository memberRepository) {
-        this.missionRepository = missionRepository;
-        this.memberRepository = memberRepository;
-    }
-
-    public static MissionResponse.addDTO toResponseAddDTO (MemberMission memberMission){
-        return MissionResponse.addDTO.builder()
+    public static MissionResponse.challengeDTO toResponseAddDTO (MemberMission memberMission){
+        return MissionResponse.challengeDTO.builder()
                 .memberMissionId(memberMission.getMemberMissionId())
                 .build();
     }
 
-    public static MemberMission toMemberMission(MissionRequest.addDTO request){
-
-        Users users = memberRepository.findById(request.getMemberId())
-                .orElseThrow(() -> new EntityNotFoundException("해당하는 회원이 없습니다."));
-
-        Mission mission = (Mission) missionRepository.findById(request.getMissionId())
-                .orElseThrow(() -> new EntityNotFoundException("해당하는 미션을 찾을 수 없습니다."));
+    public static MemberMission toMemberMission(MissionRequest.challengeDTO request, Mission mission, Users users){
 
         return MemberMission.builder()
                 .mission(mission)

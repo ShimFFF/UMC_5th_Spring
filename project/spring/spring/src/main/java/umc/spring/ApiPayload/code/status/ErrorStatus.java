@@ -42,6 +42,18 @@ public enum ErrorStatus implements BaseErrorCode {
     STORE_NAME_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "STORE4004", "이미 존재하는 가게 이름 입니다."),
     STORE_NAME_NOT_MATCH(HttpStatus.BAD_REQUEST, "STORE4005", "가게 이름이 일치하지 않습니다."),
 
+    // StoreReview 관련
+    STORE_REVIEW_NOT_FOUND(HttpStatus.BAD_REQUEST, "STORE_REVIEW4001", "존재하지 않는 가게 리뷰 입니다."),
+    STORE_REVIEW_CONTENT_NOT_EXIST(HttpStatus.BAD_REQUEST, "STORE_REVIEW4003", "가게 리뷰 내용은 필수 입니다."),
+    STORE_REVIEW_CONTENT_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "STORE_REVIEW4004", "이미 존재하는 가게 리뷰 내용 입니다."),
+    STORE_REVIEW_CONTENT_NOT_MATCH(HttpStatus.BAD_REQUEST, "STORE_REVIEW4005", "가게 리뷰 내용이 일치하지 않습니다."),
+
+    // Mission 관련
+    MISSION_NOT_FOUND(HttpStatus.BAD_REQUEST, "MISSION4001", "존재하지 않는 미션 입니다."),
+    MISSION_NAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "MISSION4003", "미션 이름은 필수 입니다."),
+    MISSION_NAME_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "MISSION4004", "이미 존재하는 미션 이름 입니다."),
+    MISSION_NAME_NOT_MATCH(HttpStatus.BAD_REQUEST, "MISSION4005", "미션 이름이 일치하지 않습니다."),
+
     // 음식 카테고리 관련
     FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "FOOD_CATEGORY4001", "존재하지 않는 음식 카테고리 입니다.");
 

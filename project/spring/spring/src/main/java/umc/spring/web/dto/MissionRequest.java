@@ -5,7 +5,7 @@ import lombok.Getter;
 public class MissionRequest {
 
     @Getter
-    public static class addDTO{
+    public static class challengeDTO{
         Long memberId;
         Long missionId;
     }

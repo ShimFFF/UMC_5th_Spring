@@ -1,13 +1,5 @@
 
-:
-java:S1118"Hide this public constructor.(€¨ø8“¿º‡Â1
-P
-java:S3010".Remove this assignment of "missionRepository".(¹Ÿùşÿÿÿÿ8—¿º‡Â1
-O
-java:S3010"-Remove this assignment of "memberRepository".(¼ôşœıÿÿÿÿ8™¿º‡Â1
-W
-java:S2209"5Change this instance-reference to a static reference.(¹Ÿùşÿÿÿÿ8›¿º‡Â1
-W
-java:S2209"5Change this instance-reference to a static reference.(¼ôşœıÿÿÿÿ8œ¿º‡Â1
-L
-java:S1905#"*Remove this unnecessary cast to "Mission".(ûšé³øÿÿÿÿ8¢¿º‡Â1
+\
+java:S1118":Add a private constructor to hide the implicit public one.(ÿ ¾Ÿûÿÿÿÿ8ÁÉÅ±Â1
+K
+java:S1172".Remove this unused method parameter "request".(ú°½¾8ğöÅ±Â1
