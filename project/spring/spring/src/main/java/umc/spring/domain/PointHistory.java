@@ -1,6 +1,8 @@
 package umc.spring.domain;
 
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import umc.spring.domain.common.BaseTimeEntitiy;
 import umc.spring.domain.enums.PointStatus;
 
@@ -9,6 +11,8 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Builder
+@DynamicInsert
+@DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class PointHistory extends BaseTimeEntitiy {

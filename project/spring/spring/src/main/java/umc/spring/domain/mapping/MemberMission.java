@@ -1,6 +1,8 @@
 package umc.spring.domain.mapping;
 
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import umc.spring.domain.Users;
 import umc.spring.domain.Mission;
 import umc.spring.domain.common.BaseTimeEntitiy;
@@ -12,6 +14,8 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Builder
+@DynamicInsert
+@DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class MemberMission extends BaseTimeEntitiy {
