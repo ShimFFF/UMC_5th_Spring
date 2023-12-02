@@ -23,7 +23,7 @@ public class NotChallengingMissionValidator implements ConstraintValidator<NotCh
 
     @Override
     public boolean isValid(MissionRequest.challengeDTO request, ConstraintValidatorContext context) {
-        boolean isValid = memberMissionRepository.existByUserIdAndMissionId(request.getMemberId(), request.getMissionId());
+        boolean isValid = memberMissionRepository.existsByMemberIdAndMissionIdAndStatus(request.getMemberId(), request.getMissionId());
 
         if(isValid){
             context.disableDefaultConstraintViolation();
