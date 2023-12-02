@@ -3,6 +3,7 @@ package umc.spring.web.dto;
 import lombok.Getter;
 import umc.spring.Validation.NotChallengingMission;
 
+
 public class MissionRequest {
 
     @Getter
