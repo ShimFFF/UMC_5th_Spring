@@ -1,10 +1,9 @@
 package umc.spring.web.dto;
 
 import lombok.Getter;
-import umc.spring.Anotaion.ExistCategories;
+import umc.spring.Validation.ExistCategories;
 import umc.spring.domain.enums.Gender;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;

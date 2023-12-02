@@ -1,8 +1,8 @@
-package umc.spring.Anotaion.Validator;
+package umc.spring.Validation.Validator;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import umc.spring.Anotaion.ExistCategories;
+import umc.spring.Validation.ExistCategories;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.repository.FoodCategRepository;
 
@@ -15,6 +15,9 @@ import java.util.List;
 public class CategoriesExistValidator implements ConstraintValidator<ExistCategories, List<Long>> {
 
     private final FoodCategRepository foodCategoryRepository;
+    //Repository는 서비스에서만 사용되어야 함
+    //따라서, 서비스에서 해당 어노테이션을 사용할 때, 해당 어노테이션을 사용하는 필드에 대한 검증을 서비스에서 진행해야 함
+
 
     @Override
     public void initialize(ExistCategories constraintAnnotation) {

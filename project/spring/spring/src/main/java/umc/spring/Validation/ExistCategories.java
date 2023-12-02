@@ -1,11 +1,10 @@
-package umc.spring.Anotaion;
+package umc.spring.Validation;
+
+import umc.spring.Validation.Validator.CategoriesExistValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.*;
 
 @Documented //사용자 정의 어노테이션을 만들 때
 @Constraint(validatedBy = CategoriesExistValidator.class)
