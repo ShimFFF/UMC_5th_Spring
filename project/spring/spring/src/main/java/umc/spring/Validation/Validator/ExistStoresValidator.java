@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.Validation.ExistStores;
 import umc.spring.repository.StoreRepository;
+import umc.spring.service.StoreService;
 import umc.spring.web.dto.ReviewRequest;
 
 import javax.validation.ConstraintValidator;
@@ -14,7 +15,7 @@ import javax.validation.ConstraintValidatorContext;
 @RequiredArgsConstructor
 public class ExistStoresValidator implements ConstraintValidator<ExistStores, Long>{
 
-    private final StoreRepository storeRepository;
+    private final StoreService storeService;
 
     @Override
     public void initialize(ExistStores constraintAnnotation) {
@@ -24,7 +25,7 @@ public class ExistStoresValidator implements ConstraintValidator<ExistStores, Lo
     @Override
     public boolean isValid(Long storeId, ConstraintValidatorContext context) {
 
-        boolean isValid = storeRepository.existsByStoreId(storeId);
+        boolean isValid = storeService.isStoreExist(storeId);
 
         if(!isValid){
             context.disableDefaultConstraintViolation();

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 import umc.spring.Validation.ExistCategories;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.repository.FoodCategRepository;
+import umc.spring.service.FoodCateService;
+import umc.spring.service.MemberService.MemberCommandServiceImpl;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -14,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CategoriesExistValidator implements ConstraintValidator<ExistCategories, List<Long>> {
 
-    private final FoodCategRepository foodCategoryRepository;
+    private final FoodCateService foodCateService;
     //Repository는 서비스에서만 사용되어야 함
     //따라서, 서비스에서 해당 어노테이션을 사용할 때, 해당 어노테이션을 사용하는 필드에 대한 검증을 서비스에서 진행해야 함
 
@@ -26,8 +28,7 @@ public class CategoriesExistValidator implements ConstraintValidator<ExistCatego
 
     @Override
     public boolean isValid(List<Long> values, ConstraintValidatorContext context) {
-        boolean isValid = values.stream()
-                .allMatch(value -> foodCategoryRepository.existsById(value));
+        boolean isValid = foodCateService.isfoodCategoryValid(values);
 
         if (!isValid) {
             context.disableDefaultConstraintViolation();

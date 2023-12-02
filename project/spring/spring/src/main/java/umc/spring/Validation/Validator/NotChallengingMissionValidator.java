@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.Validation.NotChallengingMission;
 import umc.spring.repository.MemberMissionRepository;
+import umc.spring.service.MissionService;
 import umc.spring.web.dto.MissionRequest;
 
 import javax.validation.ConstraintValidator;
@@ -14,7 +15,7 @@ import javax.validation.ConstraintValidatorContext;
 @RequiredArgsConstructor
 public class NotChallengingMissionValidator implements ConstraintValidator<NotChallengingMission, MissionRequest.challengeDTO> {
 
-    private final MemberMissionRepository memberMissionRepository;
+    private final MissionService missionService;
 
     @Override
     public void initialize(NotChallengingMission constraintAnnotation) {
@@ -23,9 +24,7 @@ public class NotChallengingMissionValidator implements ConstraintValidator<NotCh
 
     @Override
     public boolean isValid(MissionRequest.challengeDTO request, ConstraintValidatorContext context) {
-        boolean isExist = memberMissionRepository.existsByMemberIdAndMissionIdAndStatus(request.getMemberId(), request.getMissionId());
-        boolean isValid = !isExist;
-
+        boolean isValid = missionService.ismemberMissionchallengeValid(request);
         if(!isValid){
             context.disableDefaultConstraintViolation(); //기본 제약조건 비활성화
             // ErrorStatus.MISSION_ALREADY_CHALLENGED.toString() : 이미 도전중인 미션입니다.
