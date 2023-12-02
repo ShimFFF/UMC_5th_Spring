@@ -17,8 +17,8 @@ public interface MemberMissionRepository extends JpaRepository<MemberMission, Lo
 
 
     @Query("SELECT COUNT(mm) > 0 FROM MemberMission mm " +
-            "WHERE mm.member.id = :memberId " +
-            "AND mm.mission.id = :missionId " +
+            "WHERE mm.user = :memberId " +
+            "AND mm.mission = :missionId " +
             "AND mm.status = 'CHALLENGING'")
     boolean existsByMemberIdAndMissionIdAndStatus(@Param("memberId") Long memberId, @Param("missionId") Long missionId);
 }
