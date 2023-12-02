@@ -19,6 +19,7 @@ import umc.spring.web.dto.ReviewRequest;
 import umc.spring.web.dto.StoreRequest;
 
 import javax.transaction.Transactional;
+import javax.validation.ConstraintValidatorContext;
 
 @Service
 @Transactional
@@ -40,5 +41,10 @@ public class StoreService {
                 .orElseThrow(() -> new RegoinHandler(ErrorStatus.REGION_NOT_FOUND));
 
         return storeRepository.save(StoreConverter.toStore(request, users, region));
+    }
+
+    public boolean isStoreExist(Long storeId) {
+
+        return storeRepository.existsByStoreId(storeId);
     }
 }
