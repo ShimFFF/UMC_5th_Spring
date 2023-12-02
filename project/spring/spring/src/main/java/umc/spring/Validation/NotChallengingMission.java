@@ -9,6 +9,10 @@ import java.lang.annotation.*;
 
 @Documented //사용자 정의 어노테이션을 만들 때
 @Constraint(validatedBy = NotChallengingMissionValidator.class)
+// ElementType.TYPE_USE : 타입 선언문에 사용
+// ElementType.METHOD : 메소드 선언문에 사용
+// ElementType.FIELD : 필드 선언문에 사용
+// ElementType.PARAMETER : 매개변수 선언문에 사용
 @Target( {ElementType.TYPE_USE, ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface NotChallengingMission {

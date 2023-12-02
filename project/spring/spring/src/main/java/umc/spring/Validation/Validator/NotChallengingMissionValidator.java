@@ -23,13 +23,17 @@ public class NotChallengingMissionValidator implements ConstraintValidator<NotCh
 
     @Override
     public boolean isValid(MissionRequest.challengeDTO request, ConstraintValidatorContext context) {
-        boolean isValid = memberMissionRepository.existsByMemberIdAndMissionIdAndStatus(request.getMemberId(), request.getMissionId());
+        boolean isExist = memberMissionRepository.existsByMemberIdAndMissionIdAndStatus(request.getMemberId(), request.getMissionId());
+        boolean isValid = !isExist;
 
-        if(isValid){
-            context.disableDefaultConstraintViolation();
+        if(!isValid){
+            context.disableDefaultConstraintViolation(); //기본 제약조건 비활성화
+            // ErrorStatus.MISSION_ALREADY_CHALLENGED.toString() : 이미 도전중인 미션입니다.
+            // addConstraintViolation() : 에러메시지를 추가
+            // buildConstraintViolationWithTemplate() : 에러메시지를 추가할 필드를 지정
             context.buildConstraintViolationWithTemplate(ErrorStatus.MISSION_ALREADY_CHALLENGED.toString()).addConstraintViolation();
         }
 
-        return !isValid;
+        return isValid;
     }
 }

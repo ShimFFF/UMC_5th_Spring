@@ -1,13 +1,18 @@
 package umc.spring.domain;
 
 import lombok.*;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import umc.spring.domain.common.BaseTimeEntitiy;
+import umc.spring.domain.enums.Status;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Builder
+@DynamicInsert
+@DynamicUpdate
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class StoreReview extends BaseTimeEntitiy {
@@ -26,6 +31,9 @@ public class StoreReview extends BaseTimeEntitiy {
 
     @Column(nullable = false, length = 100)
     private String content;
+
+    @Column(columnDefinition = "varchar(10) default 'ACTIVE'")
+    private Status status;
 
     @Column(nullable = false)
     private Float starPoint; //별점
