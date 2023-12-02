@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.converter.MissionConverter;
 import umc.spring.domain.mapping.MemberMission;
-import umc.spring.service.MissionService;
+import umc.spring.service.MemberMissionService;
 import umc.spring.web.dto.MissionRequest;
 import umc.spring.web.dto.MissionResponse;
 
@@ -19,9 +19,9 @@ import javax.validation.Valid;
 @RequiredArgsConstructor
 public class MissionRestController {
 
-    private final MissionService missionService;
+    private final MemberMissionService missionService;
 
-    @PostMapping("/new")
+    @PostMapping("/challenge")
     public ApiResponse<MissionResponse.challengeDTO>
     join(@RequestBody @Valid MissionRequest.challengeDTO request){
 
