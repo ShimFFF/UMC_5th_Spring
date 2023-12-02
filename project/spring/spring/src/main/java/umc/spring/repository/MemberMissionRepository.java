@@ -13,12 +13,6 @@ import java.util.Optional;
 @Repository
 public interface MemberMissionRepository extends JpaRepository<MemberMission, Long> {
 
-    Optional<MemberMission> findByMemberIdAndMissionId(Long memberId, Long missionId);
-
-
-    @Query("SELECT COUNT(mm) > 0 FROM MemberMission mm " +
-            "WHERE mm.user = :memberId " +
-            "AND mm.mission = :missionId " +
-            "AND mm.status = 'CHALLENGING'")
+    @Query("SELECT CASE WHEN COUNT(mm) > 0 THEN false ELSE true END FROM MemberMission mm WHERE mm.user.userId = :memberId AND mm.mission.missionId = :missionId AND mm.status = 'GOING'")
     boolean existsByMemberIdAndMissionIdAndStatus(@Param("memberId") Long memberId, @Param("missionId") Long missionId);
 }
