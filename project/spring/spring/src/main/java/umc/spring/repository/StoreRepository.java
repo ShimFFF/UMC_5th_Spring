@@ -7,4 +7,7 @@ import umc.spring.domain.StoreReview;
 
 @Repository
 public interface StoreRepository extends JpaRepository<Store, Long> {
+
+
+        Boolean existsByStoreId(Long storeId);
 }
