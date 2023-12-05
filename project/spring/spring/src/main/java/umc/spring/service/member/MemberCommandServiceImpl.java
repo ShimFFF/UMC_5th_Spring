@@ -8,8 +8,11 @@ import umc.spring.converter.MemberConverter;
 import umc.spring.domain.FoodCateg;
 import umc.spring.domain.Users;
 import umc.spring.domain.mapping.FoodPerfer;
+import umc.spring.domain.mapping.MemberMission;
 import umc.spring.exception.handler.FoodCategHandler;
+import umc.spring.exception.handler.MemberMissionHandler;
 import umc.spring.repository.FoodCategRepository;
+import umc.spring.repository.MemberMissionRepository;
 import umc.spring.repository.MemberRepository;
 import umc.spring.web.dto.member.MemberRequestDTO;
 
@@ -23,7 +26,7 @@ import java.util.stream.Collectors;
 public class MemberCommandServiceImpl implements MemberCommendService {
 
     private final MemberRepository memberRepository;
-
+    private final MemberMissionRepository memberMissionRepository;
     private final FoodCategRepository foodCategRepository;
 
 
@@ -42,6 +45,19 @@ public class MemberCommandServiceImpl implements MemberCommendService {
         foodPreferList.forEach(foodPrefer -> {foodPrefer.setUser(newUsers);});
 
         return memberRepository.save(newUsers);
+    }
+
+    @Transactional
+    public void completeMission(Long userId,Long memberMissionId) {
+        MemberMission memberMission = memberMissionRepository.findById(memberMissionId)
+                .orElseThrow(() -> new MemberMissionHandler(ErrorStatus.MEMBER_MISSION_NOT_FOUND));
+                                    // 해당 미션을 찾지 못했다면
+
+        if(!memberMission.getUser().getUserId().equals(userId)) { // 해당 미션을 수행하는 유저가 아니라면
+            throw new MemberMissionHandler(ErrorStatus.MEMBER_MISSION_NOT_MATCH);
+        }
+
+        memberMission.completeMission();
     }
 
 }

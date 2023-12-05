@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.Validation.ExistStores;
+import umc.spring.converter.MissionConverter;
 import umc.spring.converter.ReviewConverter;
 import umc.spring.converter.StoreConverter;
 import umc.spring.domain.Store;
@@ -55,9 +56,8 @@ public class StoreRestcontroller {
         return ApiResponse.onSuccess("리뷰 작성 완료");
     }
 
-    //로깅 설정
-    @GetMapping("/{store-id}/review") // 가게 아이디로 리뷰 조회 api
     @Operation(summary = "특정 가게의 리뷰 목록 조회 API",description = "특정 가게의 리뷰들의 목록을 조회하는 API이며, 페이징을 포함합니다. query String 으로 page 번호를 주세요")
+    @GetMapping("/{store-id}/review") // 가게 아이디로 리뷰 조회 api
     @Parameters({
             @Parameter(name = "page", description = "페이지 번호, 0번이 1 페이지 입니다."),
     })
@@ -71,5 +71,23 @@ public class StoreRestcontroller {
         return ApiResponse.onSuccess(
                 ReviewConverter.toStoreReviewListPreView(
                         storeQueryService.getReviewList(storeId,page)));
+    }
+
+    @Operation(summary = "특정 가게의 미션 목록 조회 API",description = "특정 가게의 미션들의 목록을 조회하는 API이며, 페이징을 포함합니다. query String 으로 page 번호를 주세요")
+    @GetMapping("/{store-id}/mission") // 가게 아이디로 미션 조회 api
+    @Parameters({
+            @Parameter(name = "page", description = "페이지 번호, 0번이 1 페이지 입니다."),
+    })
+    public ApiResponse<StoreResponse.StoreMissionPreViewListDTO> getMissionList
+            (
+                    @ExistStores @PathVariable("store-id") Long storeId,
+                    @RequestParam(value = "page", defaultValue = "1") Integer page
+            ){
+
+
+        return ApiResponse.onSuccess(
+                MissionConverter.toStoreMissionListPreView(
+                        storeQueryService.getMissionList(storeId,page)
+                ));
     }
 }
