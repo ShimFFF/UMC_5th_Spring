@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import umc.spring.domain.Mission;
 import umc.spring.domain.Store;
 import umc.spring.domain.StoreReview;
+import umc.spring.domain.Users;
 
 @Repository
 public interface MissionRepository extends JpaRepository<Mission, Long> {
