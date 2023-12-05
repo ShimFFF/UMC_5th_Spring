@@ -4,9 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.spring.Validation.ExistCategories;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
-import umc.spring.repository.FoodCategRepository;
 import umc.spring.service.FoodCateService;
-import umc.spring.service.MemberService.MemberCommandServiceImpl;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
