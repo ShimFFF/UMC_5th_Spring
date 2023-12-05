@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.converter.StoreConverter;
 import umc.spring.domain.Store;
-import umc.spring.service.StoreService;
+import umc.spring.service.Store.StoreService;
 import umc.spring.web.dto.store.StoreRequest;
 import umc.spring.web.dto.store.StoreResponse;
 

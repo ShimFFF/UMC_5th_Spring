@@ -32,6 +32,7 @@ public class StoreReview extends BaseTimeEntitiy {
     @Column(nullable = false, length = 100)
     private String content;
 
+    @Enumerated(EnumType.STRING)
     @Column(columnDefinition = "varchar(10) default 'ACTIVE'")
     private Status status;
 
