@@ -12,6 +12,7 @@ import umc.spring.Validation.ExistStores;
 import umc.spring.converter.ReviewConverter;
 import umc.spring.converter.StoreConverter;
 import umc.spring.domain.Store;
+import umc.spring.service.Store.StoreQueryService;
 import umc.spring.service.Store.StoreService;
 import umc.spring.service.review.ReviewQueryService;
 import umc.spring.service.review.ReviewService;
@@ -28,9 +29,7 @@ import javax.validation.Valid;
 public class StoreRestcontroller {
 
     private final StoreService storeService;
-    private final ReviewService reviewService;
-    private final ReviewQueryService reviewQueryService;
-
+    private final StoreQueryService storeQueryService;
 
     @PostMapping("/add")
     public ApiResponse<StoreResponse.addDTO>
@@ -52,7 +51,7 @@ public class StoreRestcontroller {
     @PostMapping("/review/write") // 리뷰 작성 api
     public ApiResponse<String>
     join(@RequestBody @Valid ReviewRequest.writeDTO request){
-        reviewService.write(request);
+        storeService.writeReiew(request);
         return ApiResponse.onSuccess("리뷰 작성 완료");
     }
 
@@ -71,6 +70,6 @@ public class StoreRestcontroller {
 
         return ApiResponse.onSuccess(
                 ReviewConverter.toStoreReviewListPreView(
-                        reviewQueryService.getReviewList(storeId,page)));
+                        storeQueryService.getReviewList(storeId,page)));
     }
 }
