@@ -49,4 +49,9 @@ public class MemberMission extends BaseTimeEntitiy {
             dueDate = getCreatedAt().plusDays(30);
         }
     }
+
+    public void completeMission() {
+        this.status = MissionStatus.SUCCESS;
+        this.completeDate = LocalDateTime.now();
+    }
 }

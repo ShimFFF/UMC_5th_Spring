@@ -68,4 +68,14 @@ public class MemberRestController {
         );
     }
 
+    @Operation(summary = "미션 완료 API",description = "내가 도전중인 미션을 완료로 바꾸는 API입니다.")
+    @PatchMapping("{user-id}/mission/complete/{member-mission-id}")
+    public ApiResponse<String> completeMission(
+            @PathVariable("user-id") Long userId,
+            @PathVariable("member-mission-id") Long memberMissionId
+    ){
+        memberCommandService.completeMission(userId,memberMissionId);
+        return ApiResponse.onSuccess("미션 완료");
+    }
+
 }
