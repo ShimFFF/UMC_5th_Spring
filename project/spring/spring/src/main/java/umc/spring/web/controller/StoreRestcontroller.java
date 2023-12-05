@@ -8,11 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.converter.StoreConverter;
 import umc.spring.domain.Store;
-import umc.spring.service.ReviewService;
 import umc.spring.service.StoreService;
-import umc.spring.web.dto.ReviewRequest;
-import umc.spring.web.dto.StoreRequest;
-import umc.spring.web.dto.StoreResponse;
+import umc.spring.web.dto.store.StoreRequest;
+import umc.spring.web.dto.store.StoreResponse;
 
 import javax.validation.Valid;
 

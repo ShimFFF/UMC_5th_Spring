@@ -3,11 +3,7 @@ package umc.spring.converter;
 import umc.spring.domain.Store;
 import umc.spring.domain.StoreReview;
 import umc.spring.domain.Users;
-import umc.spring.repository.MemberRepository;
-import umc.spring.repository.StoreRepository;
-import umc.spring.web.dto.ReviewRequest;
-
-import javax.persistence.EntityNotFoundException;
+import umc.spring.web.dto.review.ReviewRequest;
 
 public class ReviewConverter {
 

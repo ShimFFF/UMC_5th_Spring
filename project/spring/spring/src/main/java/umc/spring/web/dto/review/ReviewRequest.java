@@ -1,4 +1,4 @@
-package umc.spring.web.dto;
+package umc.spring.web.dto.review;
 
 import lombok.Getter;
 import umc.spring.Validation.ExistStores;

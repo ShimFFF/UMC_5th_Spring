@@ -1,17 +1,19 @@
-package umc.spring.web.dto;
+package umc.spring.web.dto.store;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-public class MissionResponse {
+import java.time.LocalDateTime;
+
+public class StoreResponse {
 
     @Builder
     @Getter
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class challengeDTO{
-        Long memberMissionId;
+    public static class addDTO{
+        Long storeId;
     }
 }

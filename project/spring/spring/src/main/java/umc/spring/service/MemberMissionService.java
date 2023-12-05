@@ -11,10 +11,9 @@ import umc.spring.exception.handler.MemberHandler;
 import umc.spring.repository.MemberMissionRepository;
 import umc.spring.repository.MemberRepository;
 import umc.spring.repository.MissionRepository;
-import umc.spring.web.dto.MissionRequest;
+import umc.spring.web.dto.memberMission.MemberMissionRequest;
 
 import javax.transaction.Transactional;
-import javax.validation.ConstraintValidatorContext;
 
 @Service
 @RequiredArgsConstructor
@@ -26,7 +25,7 @@ public class MemberMissionService {
     private final MemberRepository memberRepository;
 
     @Transactional
-    public MemberMission challenge(MissionRequest.challengeDTO request) {
+    public MemberMission challenge(MemberMissionRequest.challengeDTO request) {
         Users users = memberRepository.findById(request.getMemberId())
                 .orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));
 
@@ -36,7 +35,7 @@ public class MemberMissionService {
         return memberMissionRepository.save(MissionConverter.toMemberMission(request, mission, users));
     }
 
-    public boolean ismemberMissionchallengeValid(MissionRequest.challengeDTO request) {
+    public boolean ismemberMissionchallengeValid(MemberMissionRequest.challengeDTO request) {
         boolean isExist = memberMissionRepository.existsByMemberIdAndMissionIdAndStatus(request.getMemberId(), request.getMissionId());
         return !isExist;
     }

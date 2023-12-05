@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.service.ReviewService;
-import umc.spring.web.dto.ReviewRequest;
+import umc.spring.web.dto.review.ReviewRequest;
 
 import javax.validation.Valid;
 

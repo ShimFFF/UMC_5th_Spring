@@ -11,7 +11,7 @@ import umc.spring.domain.mapping.FoodPerfer;
 import umc.spring.exception.handler.FoodCategHandler;
 import umc.spring.repository.FoodCategRepository;
 import umc.spring.repository.MemberRepository;
-import umc.spring.web.dto.MemberRequestDTO;
+import umc.spring.web.dto.member.MemberRequestDTO;
 
 import javax.transaction.Transactional;
 import java.util.List;

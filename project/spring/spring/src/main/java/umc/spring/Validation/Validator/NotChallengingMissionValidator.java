@@ -4,16 +4,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.Validation.NotChallengingMission;
-import umc.spring.repository.MemberMissionRepository;
 import umc.spring.service.MissionService;
-import umc.spring.web.dto.MissionRequest;
+import umc.spring.web.dto.memberMission.MemberMissionRequest;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 @Component
 @RequiredArgsConstructor
-public class NotChallengingMissionValidator implements ConstraintValidator<NotChallengingMission, MissionRequest.challengeDTO> {
+public class NotChallengingMissionValidator implements ConstraintValidator<NotChallengingMission, MemberMissionRequest.challengeDTO> {
 
     private final MissionService missionService;
 
@@ -23,7 +22,7 @@ public class NotChallengingMissionValidator implements ConstraintValidator<NotCh
     }
 
     @Override
-    public boolean isValid(MissionRequest.challengeDTO request, ConstraintValidatorContext context) {
+    public boolean isValid(MemberMissionRequest.challengeDTO request, ConstraintValidatorContext context) {
         boolean isValid = missionService.ismemberMissionchallengeValid(request);
         if(!isValid){
             context.disableDefaultConstraintViolation(); //기본 제약조건 비활성화

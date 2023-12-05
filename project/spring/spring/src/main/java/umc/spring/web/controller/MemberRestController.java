@@ -9,8 +9,8 @@ import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.converter.MemberConverter;
 import umc.spring.domain.Users;
 import umc.spring.service.MemberService.MemberCommandServiceImpl;
-import umc.spring.web.dto.MemberRequestDTO;
-import umc.spring.web.dto.MemberResponseDTO;
+import umc.spring.web.dto.member.MemberRequestDTO;
+import umc.spring.web.dto.member.MemberResponseDTO;
 
 import javax.validation.Valid;
 

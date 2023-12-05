@@ -9,8 +9,8 @@ import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.converter.MissionConverter;
 import umc.spring.domain.mapping.MemberMission;
 import umc.spring.service.MemberMissionService;
-import umc.spring.web.dto.MissionRequest;
-import umc.spring.web.dto.MissionResponse;
+import umc.spring.web.dto.memberMission.MemberMissionRequest;
+import umc.spring.web.dto.memberMission.MemberMissionResponse;
 
 import javax.validation.Valid;
 
@@ -22,8 +22,8 @@ public class MissionRestController {
     private final MemberMissionService missionService;
 
     @PostMapping("/challenge")
-    public ApiResponse<MissionResponse.challengeDTO>
-    join(@RequestBody @Valid MissionRequest.challengeDTO request){
+    public ApiResponse<MemberMissionResponse.challengeDTO>
+    join(@RequestBody @Valid MemberMissionRequest.challengeDTO request){
 
         //controller는 api 컨트롤 역할만 하고, 비즈니스 로직은 service에서 처리
         //따라서, response로의 변환은 controller에서,

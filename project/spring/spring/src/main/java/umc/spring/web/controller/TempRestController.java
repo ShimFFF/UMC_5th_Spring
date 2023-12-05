@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.converter.TempConverter;
 import umc.spring.service.TempService.TempQueryService;
-import umc.spring.web.dto.TempResponse;
+import umc.spring.web.dto.test.TempResponse;
 
 @RestController
 @RequestMapping("/temp") // http://localhost:8080/temp로 접근하면 아래의 메소드를 실행

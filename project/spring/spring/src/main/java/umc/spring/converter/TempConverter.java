@@ -1,6 +1,6 @@
 package umc.spring.converter;
 
-import umc.spring.web.dto.TempResponse;
+import umc.spring.web.dto.test.TempResponse;
 
 // Converter 역할 : DTO를 Entity로 변환
 // OOP에 따라 역할을 분리하여 코드를 작성하면 유지보수가 편리해짐

@@ -12,9 +12,8 @@ import umc.spring.exception.handler.StoreHandler;
 import umc.spring.repository.MemberRepository;
 import umc.spring.repository.ReviewRepository;
 import umc.spring.repository.StoreRepository;
-import umc.spring.web.dto.ReviewRequest;
+import umc.spring.web.dto.review.ReviewRequest;
 
-import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 
 @Service

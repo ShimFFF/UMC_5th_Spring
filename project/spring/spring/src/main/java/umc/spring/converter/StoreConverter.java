@@ -1,20 +1,10 @@
 package umc.spring.converter;
 
-import lombok.RequiredArgsConstructor;
-import umc.spring.ApiPayload.code.BaseErrorCode;
-import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.domain.Region;
 import umc.spring.domain.Store;
 import umc.spring.domain.Users;
-import umc.spring.exception.handler.MemberHandler;
-import umc.spring.exception.handler.RegoinHandler;
-import umc.spring.repository.MemberRepository;
-import umc.spring.repository.RegionRepository;
-import umc.spring.repository.StoreRepository;
-import umc.spring.web.dto.StoreRequest;
-import umc.spring.web.dto.StoreResponse;
-
-import javax.persistence.EntityNotFoundException;
+import umc.spring.web.dto.store.StoreRequest;
+import umc.spring.web.dto.store.StoreResponse;
 
 
 public class StoreConverter {

@@ -1,10 +1,10 @@
-package umc.spring.web.dto;
+package umc.spring.web.dto.memberMission;
 
 import lombok.Getter;
 import umc.spring.Validation.NotChallengingMission;
 
 
-public class MissionRequest {
+public class MemberMissionRequest {
 
     @Getter
     @NotChallengingMission

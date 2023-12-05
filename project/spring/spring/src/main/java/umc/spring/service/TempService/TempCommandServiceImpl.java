@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import umc.spring.domain.Users;
 import umc.spring.repository.MemberRepository;
-import umc.spring.web.dto.MemberRequestDTO;
+import umc.spring.web.dto.member.MemberRequestDTO;
 
 @Service
 @RequiredArgsConstructor

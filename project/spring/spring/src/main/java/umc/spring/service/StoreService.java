@@ -3,23 +3,18 @@ package umc.spring.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
-import umc.spring.converter.ReviewConverter;
 import umc.spring.converter.StoreConverter;
 import umc.spring.domain.Region;
 import umc.spring.domain.Store;
-import umc.spring.domain.StoreReview;
 import umc.spring.domain.Users;
 import umc.spring.exception.handler.MemberHandler;
 import umc.spring.exception.handler.RegoinHandler;
 import umc.spring.repository.MemberRepository;
 import umc.spring.repository.RegionRepository;
-import umc.spring.repository.ReviewRepository;
 import umc.spring.repository.StoreRepository;
-import umc.spring.web.dto.ReviewRequest;
-import umc.spring.web.dto.StoreRequest;
+import umc.spring.web.dto.store.StoreRequest;
 
 import javax.transaction.Transactional;
-import javax.validation.ConstraintValidatorContext;
 
 @Service
 @Transactional
