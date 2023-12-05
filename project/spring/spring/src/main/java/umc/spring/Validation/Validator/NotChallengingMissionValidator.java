@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.Validation.NotChallengingMission;
-import umc.spring.service.MissionService;
+import umc.spring.service.MemberMissionService;
 import umc.spring.web.dto.memberMission.MemberMissionRequest;
 
 import javax.validation.ConstraintValidator;
@@ -14,7 +14,7 @@ import javax.validation.ConstraintValidatorContext;
 @RequiredArgsConstructor
 public class NotChallengingMissionValidator implements ConstraintValidator<NotChallengingMission, MemberMissionRequest.challengeDTO> {
 
-    private final MissionService missionService;
+    private final MemberMissionService missionService;
 
     @Override
     public void initialize(NotChallengingMission constraintAnnotation) {
