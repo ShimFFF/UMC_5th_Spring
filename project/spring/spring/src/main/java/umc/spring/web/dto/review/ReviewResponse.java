@@ -35,4 +35,31 @@ public class ReviewResponse {
         Boolean isFirst;
         Boolean isLast;
     }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor // 내가 쓴 리뷰 조회
+    public static class MyReviewPreViewDTO{
+        Long reviewId;
+        Long storeId;
+        String storeName;
+        String content;
+        Float starPoint;
+        String createdAt;
+    }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor // 내가 쓴 리뷰 리스트
+    // 페이징을 위해 만듬
+    public static class MyReviewPreViewListDTO{
+        List<MyReviewPreViewDTO> reviewList;
+        Integer listSize;
+        Integer totalPage;
+        Long totalElements;
+        Boolean isFirst;
+        Boolean isLast;
+    }
 }

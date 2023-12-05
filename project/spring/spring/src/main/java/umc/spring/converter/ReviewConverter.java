@@ -47,6 +47,32 @@ public class ReviewConverter {
                 .reviewList(reviewPreViewDTOList)
                 .build();
     }
+
+    public static ReviewResponse.MyReviewPreViewDTO toMyReviewPreView(StoreReview review){
+        return ReviewResponse.MyReviewPreViewDTO.builder()
+                .reviewId(review.getReviewId())
+                .storeId(review.getStore().getStoreId())
+                .storeName(review.getStore().getName())
+                .content(review.getContent())
+                .starPoint(review.getStarPoint())
+                .createdAt(review.getCreatedAt().toLocalDate().toString())
+                .build();
+    }
+
+    public static ReviewResponse.MyReviewPreViewListDTO toMyReviewListPreView(Page<StoreReview> reviewList){
+        // stream으로 바꿔서 map으로 하나씩 바꿔줌 -> collect로 다시 list로 바꿔줌 -> 그걸 reviewPreViewDTOList에 넣음
+        List<ReviewResponse.MyReviewPreViewDTO> reviewPreViewDTOList = reviewList.stream()
+                .map(ReviewConverter::toMyReviewPreView).collect(Collectors.toList());
+
+        return ReviewResponse.MyReviewPreViewListDTO.builder()
+                .isLast(reviewList.isLast())
+                .isFirst(reviewList.isFirst())
+                .totalPage(reviewList.getTotalPages())
+                .totalElements(reviewList.getTotalElements())
+                .listSize(reviewPreViewDTOList.size())
+                .reviewList(reviewPreViewDTOList)
+                .build();
+    }
 }
 
 
