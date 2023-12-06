@@ -2,6 +2,7 @@ package umc.spring.service.member;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.converter.FoodPreferConverter;
 import umc.spring.converter.MemberConverter;
@@ -16,13 +17,11 @@ import umc.spring.repository.MemberMissionRepository;
 import umc.spring.repository.MemberRepository;
 import umc.spring.web.dto.member.MemberRequestDTO;
 
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class MemberCommandServiceImpl implements MemberCommendService {
 
     private final MemberRepository memberRepository;

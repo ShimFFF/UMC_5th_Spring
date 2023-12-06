@@ -15,12 +15,11 @@ import umc.spring.repository.MemberMissionRepository;
 import umc.spring.repository.MemberRepository;
 import umc.spring.repository.ReviewRepository;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class MemberQueryServiceImpl{
     private final ReviewRepository reviewRepository;
     private final MemberRepository memberRepository;
@@ -30,6 +29,7 @@ public class MemberQueryServiceImpl{
         return memberRepository.findById(id);
     }
 
+    @Transactional(readOnly = true)
     public Page<StoreReview> getReviewList(Long memberId, Integer page) { // 내가 쓴 가게 리뷰 리스트
         Optional<Users> optionalStore = findMember(memberId);
         Users users = optionalStore.get();
@@ -38,6 +38,7 @@ public class MemberQueryServiceImpl{
         return reviewPage;
     }
 
+    @Transactional(readOnly = true)
     public Page<MemberMission> getGoingMissionList(Long memberId, Integer page) { // 도전 중인 미션 리스트
         Optional<Users> optionalUser = findMember(memberId);
         Users users = optionalUser.get();

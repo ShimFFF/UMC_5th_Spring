@@ -2,6 +2,7 @@ package umc.spring.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.converter.MissionConverter;
 import umc.spring.domain.Mission;
@@ -13,11 +14,9 @@ import umc.spring.repository.MemberRepository;
 import umc.spring.repository.MissionRepository;
 import umc.spring.web.dto.memberMission.MemberMissionRequest;
 
-import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class MemberMissionService {
 
     private final MemberMissionRepository memberMissionRepository;
@@ -35,6 +34,7 @@ public class MemberMissionService {
         return memberMissionRepository.save(MissionConverter.toMemberMission(request, mission, users));
     }
 
+    @Transactional(readOnly = true)
     public boolean ismemberMissionchallengeValid(MemberMissionRequest.challengeDTO request) {
         boolean isExist = memberMissionRepository.existsByMemberIdAndMissionIdAndStatus(request.getMemberId(), request.getMissionId());
         return !isExist;

@@ -2,6 +2,7 @@ package umc.spring.service.review;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.converter.ReviewConverter;
 import umc.spring.domain.Store;
@@ -14,11 +15,8 @@ import umc.spring.repository.ReviewRepository;
 import umc.spring.repository.StoreRepository;
 import umc.spring.web.dto.review.ReviewRequest;
 
-import javax.transaction.Transactional;
-
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class ReviewService {
 
     private final ReviewRepository reviewRepository;
