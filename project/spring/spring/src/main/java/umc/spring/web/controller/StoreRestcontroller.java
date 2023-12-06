@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.ApiPayload.ApiResponse;
+import umc.spring.Validation.CheckPage;
 import umc.spring.Validation.ExistStores;
 import umc.spring.converter.MissionConverter;
 import umc.spring.converter.ReviewConverter;
@@ -64,7 +65,7 @@ public class StoreRestcontroller {
     public ApiResponse<ReviewResponse.StoreReviewPreViewListDTO> getReviewList
     (
             @ExistStores @PathVariable("store-id") Long storeId,
-            @RequestParam(value = "page", defaultValue = "1") Integer page
+            @CheckPage @RequestParam(name= "page") Integer page
     ){
 
 
@@ -81,7 +82,7 @@ public class StoreRestcontroller {
     public ApiResponse<StoreResponse.StoreMissionPreViewListDTO> getMissionList
             (
                     @ExistStores @PathVariable("store-id") Long storeId,
-                    @RequestParam(value = "page", defaultValue = "1") Integer page
+                    @CheckPage @RequestParam(name= "page") Integer page
             ){
 
 

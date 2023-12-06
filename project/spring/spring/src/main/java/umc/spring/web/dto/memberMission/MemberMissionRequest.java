@@ -7,7 +7,6 @@ import umc.spring.Validation.NotChallengingMission;
 public class MemberMissionRequest {
 
     @Getter
-    @NotChallengingMission
     public static class challengeDTO{
         Long memberId;
         Long missionId;

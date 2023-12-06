@@ -63,7 +63,11 @@ public enum ErrorStatus implements BaseErrorCode {
     MEMBER_MISSION_NOT_MATCH(HttpStatus.BAD_REQUEST, "MISSION4011", "회원 미션 정보가 일치하지 않습니다."),
 
     // 음식 카테고리 관련
-    FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "FOOD_CATEGORY4001", "존재하지 않는 음식 카테고리 입니다.");
+    FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "FOOD_CATEGORY4001", "존재하지 않는 음식 카테고리 입니다."),
+
+    //페이징 관련
+    PAGE_NOT_VALID(HttpStatus.BAD_REQUEST, "PAGE4001", "유효하지 않는 페이지 입니다.")
+    ;
 
     private final HttpStatus httpStatus;
     private final String code;
