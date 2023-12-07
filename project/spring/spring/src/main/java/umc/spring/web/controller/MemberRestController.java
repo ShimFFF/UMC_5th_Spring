@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.ApiPayload.ApiResponse;
+import umc.spring.Validation.ChallengingMission;
 import umc.spring.Validation.CheckPage;
 import umc.spring.Validation.ExistStores;
 import umc.spring.Validation.NotChallengingMission;
@@ -94,7 +95,7 @@ public class MemberRestController {
     @PatchMapping("{user-id}/mission/complete/{member-mission-id}")
     public ApiResponse<String> completeMission(
             @PathVariable("user-id") Long userId,
-            @PathVariable("member-mission-id") Long memberMissionId
+            @ChallengingMission @PathVariable("member-mission-id") Long memberMissionId
     ){
         memberCommandService.completeMission(userId,memberMissionId);
         return ApiResponse.onSuccess("미션 완료");

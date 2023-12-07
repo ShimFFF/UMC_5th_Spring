@@ -53,14 +53,15 @@ public enum ErrorStatus implements BaseErrorCode {
     MISSION_NAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "MISSION4003", "미션 이름은 필수 입니다."),
     MISSION_NAME_ALREADY_EXIST(HttpStatus.BAD_REQUEST, "MISSION4004", "이미 존재하는 미션 이름 입니다."),
     MISSION_NAME_NOT_MATCH(HttpStatus.BAD_REQUEST, "MISSION4005", "미션 이름이 일치하지 않습니다."),
-
-    //memberMission 관련
     MISSION_ALREADY_CHALLENGED(HttpStatus.BAD_REQUEST, "MISSION4006", "이미 도전한 미션 입니다."),
     MISSION_NOT_CHALLENGED(HttpStatus.BAD_REQUEST, "MISSION4007", "도전하지 않은 미션 입니다."),
     MISSION_NOT_CHALLENGED_YET(HttpStatus.BAD_REQUEST, "MISSION4008", "아직 도전하지 않은 미션 입니다."),
     MISSION_ALREADY_COMPLETED(HttpStatus.BAD_REQUEST, "MISSION4009", "이미 완료한 미션 입니다."),
+
+    //memberMission 관련
     MEMBER_MISSION_NOT_FOUND(HttpStatus.BAD_REQUEST, "MISSION4010", "존재하지 않는 회원 미션 입니다."),
     MEMBER_MISSION_NOT_MATCH(HttpStatus.BAD_REQUEST, "MISSION4011", "회원 미션 정보가 일치하지 않습니다."),
+    MEMBER_MISSION_NOT_CHALLENGED(HttpStatus.BAD_REQUEST, "MISSION4012", "도전중인 미션이 아닙니다."),
 
     // 음식 카테고리 관련
     FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "FOOD_CATEGORY4001", "존재하지 않는 음식 카테고리 입니다."),
