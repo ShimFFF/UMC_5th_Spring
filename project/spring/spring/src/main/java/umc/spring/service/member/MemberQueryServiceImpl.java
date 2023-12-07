@@ -34,8 +34,8 @@ public class MemberQueryServiceImpl{
 
     @Transactional(readOnly = true)
     public Page<StoreReview> getReviewList(Long memberId, Integer page) { // 내가 쓴 가게 리뷰 리스트
-        Optional<Users> optionalStore = findMember(memberId);
-        Users users = optionalStore.get();
+        Users users = findMember(memberId)
+                .orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));
 
         Page<StoreReview> reviewPage = reviewRepository.findAllByUser(users, PageRequest.of(page, 10));
         return reviewPage;
