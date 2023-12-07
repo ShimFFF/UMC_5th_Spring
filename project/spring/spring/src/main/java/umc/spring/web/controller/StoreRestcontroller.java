@@ -73,7 +73,7 @@ public class StoreRestcontroller {
 
         return ApiResponse.onSuccess(
                 ReviewConverter.toStoreReviewListPreView(
-                        storeQueryService.getReviewList(storeId,page)));
+                        storeQueryService.getReviewList(storeId,page-1)));
     }
 
     @Operation(summary = "특정 가게의 미션 목록 조회 API",description = "특정 가게의 미션들의 목록을 조회하는 API이며, 페이징을 포함합니다. query String 으로 page 번호를 주세요")
@@ -90,7 +90,7 @@ public class StoreRestcontroller {
 
         return ApiResponse.onSuccess(
                 MissionConverter.toStoreMissionListPreView(
-                        storeQueryService.getMissionList(storeId,page)
+                        storeQueryService.getMissionList(storeId,page-1)
                 ));
     }
 }

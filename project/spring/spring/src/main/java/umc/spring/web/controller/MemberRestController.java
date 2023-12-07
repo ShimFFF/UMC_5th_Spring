@@ -67,7 +67,7 @@ public class MemberRestController {
                   @CheckPage @RequestParam(name= "page") Integer page){
         return ApiResponse.onSuccess(
                 ReviewConverter.toMyReviewListPreView(
-                        memberQueryService.getReviewList(userId, page)
+                        memberQueryService.getReviewList(userId, page-1)
                 )
         );
     }
@@ -85,7 +85,7 @@ public class MemberRestController {
 
         return ApiResponse.onSuccess(
                 MemberMissionConverter.toGoingMissionPreViewList(
-                        memberQueryService.getGoingMissionList(storeId, page)
+                        memberQueryService.getGoingMissionList(storeId, page-1)
                 )
         );
     }
