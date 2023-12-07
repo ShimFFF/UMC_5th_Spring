@@ -34,6 +34,7 @@ public class StoreRestcontroller {
 
     private final StoreService storeService;
     private final StoreQueryService storeQueryService;
+    private final ReviewQueryService reviewQueryService;
 
     @PostMapping("/add")
     public ApiResponse<StoreResponse.addDTO>
@@ -73,7 +74,7 @@ public class StoreRestcontroller {
 
         return ApiResponse.onSuccess(
                 ReviewConverter.toStoreReviewListPreView(
-                        storeQueryService.getReviewList(storeId,page-1)));
+                        reviewQueryService.getStoreReviewList(storeId,page-1)));
     }
 
     @Operation(summary = "특정 가게의 미션 목록 조회 API",description = "특정 가게의 미션들의 목록을 조회하는 API이며, 페이징을 포함합니다. query String 으로 page 번호를 주세요")

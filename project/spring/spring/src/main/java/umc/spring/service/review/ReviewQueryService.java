@@ -24,7 +24,7 @@ public class ReviewQueryService {
     }
 
     @Transactional(readOnly = true)
-    public Page<StoreReview> getReviewList(Long storeId, Integer page) {
+    public Page<StoreReview> getStoreReviewList(Long storeId, Integer page) {
         Optional<Store> optionalStore = findStore(storeId);
         Store store = optionalStore.get();
 

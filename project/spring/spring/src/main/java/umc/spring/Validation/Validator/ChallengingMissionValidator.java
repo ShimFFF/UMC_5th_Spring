@@ -1,13 +1,10 @@
 package umc.spring.Validation.Validator;
 
 import lombok.RequiredArgsConstructor;
-import org.aspectj.weaver.ast.Not;
 import org.springframework.stereotype.Component;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.Validation.ChallengingMission;
-import umc.spring.Validation.NotChallengingMission;
-import umc.spring.service.MemberMissionService;
-import umc.spring.web.dto.memberMission.MemberMissionRequest;
+import umc.spring.service.memberMission.MemberMissionService;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

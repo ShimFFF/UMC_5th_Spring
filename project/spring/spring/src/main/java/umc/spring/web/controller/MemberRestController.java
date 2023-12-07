@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.Validation.ChallengingMission;
 import umc.spring.Validation.CheckPage;
-import umc.spring.Validation.ExistStores;
 import umc.spring.Validation.NotChallengingMission;
 import umc.spring.converter.MemberConverter;
 import umc.spring.converter.MemberMissionConverter;
@@ -18,7 +17,8 @@ import umc.spring.converter.MissionConverter;
 import umc.spring.converter.ReviewConverter;
 import umc.spring.domain.Users;
 import umc.spring.domain.mapping.MemberMission;
-import umc.spring.service.MemberMissionService;
+import umc.spring.service.memberMission.MemberMissionQueryService;
+import umc.spring.service.memberMission.MemberMissionService;
 import umc.spring.service.member.MemberCommandServiceImpl;
 import umc.spring.service.member.MemberQueryServiceImpl;
 import umc.spring.web.dto.member.MemberRequestDTO;
@@ -26,7 +26,6 @@ import umc.spring.web.dto.member.MemberResponseDTO;
 import umc.spring.web.dto.memberMission.MemberMissionRequest;
 import umc.spring.web.dto.memberMission.MemberMissionResponse;
 import umc.spring.web.dto.review.ReviewResponse;
-import umc.spring.web.dto.store.StoreResponse;
 
 import javax.validation.Valid;
 
@@ -39,6 +38,7 @@ public class MemberRestController {
     private final MemberCommandServiceImpl memberCommandService;
     private final MemberQueryServiceImpl memberQueryService;
     private final MemberMissionService memberMissionService;
+    private final MemberMissionQueryService memberMissionQueryService;
 
     @PostMapping("/signup") //users/signup으로 접근하면 아래의 메소드를 실행
     public ApiResponse<MemberResponseDTO.SignUpDTO>
@@ -97,7 +97,7 @@ public class MemberRestController {
             @PathVariable("user-id") Long userId,
             @ChallengingMission @PathVariable("member-mission-id") Long memberMissionId
     ){
-        memberCommandService.completeMission(userId,memberMissionId);
+        memberMissionQueryService.completeMission(userId,memberMissionId);
         return ApiResponse.onSuccess("미션 완료");
     }
 

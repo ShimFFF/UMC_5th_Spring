@@ -46,17 +46,4 @@ public class MemberCommandServiceImpl implements MemberCommendService {
         return memberRepository.save(newUsers);
     }
 
-    @Transactional
-    public void completeMission(Long userId,Long memberMissionId) {
-        MemberMission memberMission = memberMissionRepository.findById(memberMissionId)
-                .orElseThrow(() -> new MemberMissionHandler(ErrorStatus.MEMBER_MISSION_NOT_FOUND));
-                                    // 해당 미션을 찾지 못했다면
-
-        if(!memberMission.getUser().getUserId().equals(userId)) { // 해당 미션을 수행하는 유저가 아니라면
-            throw new MemberMissionHandler(ErrorStatus.MEMBER_MISSION_NOT_MATCH);
-        }
-
-        memberMission.completeMission();
-    }
-
 }

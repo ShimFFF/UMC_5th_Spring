@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.Validation.NotChallengingMission;
-import umc.spring.service.MemberMissionService;
+import umc.spring.service.memberMission.MemberMissionService;
 import umc.spring.web.dto.memberMission.MemberMissionRequest;
 
 import javax.validation.ConstraintValidator;
