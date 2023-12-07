@@ -12,7 +12,6 @@ import umc.spring.Validation.CheckPage;
 import umc.spring.exception.handler.PageHandler;
 
 import javax.servlet.http.HttpServletRequest;
-import java.text.ParseException;
 
 @Component
 public class CheckPageResolver implements HandlerMethodArgumentResolver {

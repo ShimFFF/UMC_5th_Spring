@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.Parameters;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.Validation.CheckPage;
@@ -26,6 +27,7 @@ import umc.spring.web.dto.store.StoreResponse;
 import javax.validation.Valid;
 
 @RestController
+@Validated
 @RequestMapping("/store") // http://localhost:8080/users로 접근하면 아래의 메소드를 실행
 @RequiredArgsConstructor
 public class StoreRestcontroller {

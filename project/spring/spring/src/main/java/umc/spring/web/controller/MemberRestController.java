@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.Parameters;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import umc.spring.ApiPayload.ApiResponse;
 import umc.spring.Validation.CheckPage;
@@ -30,6 +31,7 @@ import javax.validation.Valid;
 
 @Slf4j
 @RestController
+@Validated
 @RequestMapping("/users") // http://localhost:8080/users로 접근하면 아래의 메소드를 실행
 @RequiredArgsConstructor
 public class MemberRestController {
