@@ -22,7 +22,7 @@ public class MemberMission extends BaseTimeEntitiy {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long MemberMissionId;
+    private Long memberMissionId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "mission_id") //FK

@@ -13,7 +13,6 @@ import umc.spring.domain.enums.MissionStatus;
 import umc.spring.domain.enums.Status;
 import umc.spring.domain.mapping.MemberMission;
 
-import java.util.Optional;
 
 @Repository
 public interface MemberMissionRepository extends JpaRepository<MemberMission, Long> {
@@ -22,5 +21,7 @@ public interface MemberMissionRepository extends JpaRepository<MemberMission, Lo
     boolean existsByMemberIdAndMissionIdAndStatus(@Param("memberId") Long memberId, @Param("missionId") Long missionId);
 
     Page<MemberMission> findAllByUserAndStatus(Users user, MissionStatus missionStatus, PageRequest pageRequest);
+
+    boolean existsByMemberMissionIdAndStatus(Long memberMissionId, MissionStatus status);
 
 }

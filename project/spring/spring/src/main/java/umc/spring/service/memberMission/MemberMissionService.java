@@ -1,4 +1,4 @@
-package umc.spring.service;
+package umc.spring.service.memberMission;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -7,6 +7,7 @@ import umc.spring.ApiPayload.code.status.ErrorStatus;
 import umc.spring.converter.MissionConverter;
 import umc.spring.domain.Mission;
 import umc.spring.domain.Users;
+import umc.spring.domain.enums.MissionStatus;
 import umc.spring.domain.mapping.MemberMission;
 import umc.spring.exception.handler.MemberHandler;
 import umc.spring.repository.MemberMissionRepository;
@@ -35,8 +36,13 @@ public class MemberMissionService {
     }
 
     @Transactional(readOnly = true)
-    public boolean ismemberMissionchallengeValid(MemberMissionRequest.challengeDTO request) {
+    public boolean ismemberMissionNotchalleng(MemberMissionRequest.challengeDTO request) {
         boolean isExist = memberMissionRepository.existsByMemberIdAndMissionIdAndStatus(request.getMemberId(), request.getMissionId());
         return !isExist;
+    }
+
+    @Transactional(readOnly = true)
+    public boolean ismemberMissionChalleng(Long id) {
+        return memberMissionRepository.existsByMemberMissionIdAndStatus(id, MissionStatus.GOING);
     }
 }

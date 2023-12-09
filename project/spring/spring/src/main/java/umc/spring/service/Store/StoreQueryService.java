@@ -26,15 +26,6 @@ public class StoreQueryService {
     }
 
     @Transactional(readOnly = true)
-    public Page<StoreReview> getReviewList(Long storeId, Integer page) { // 가게 리뷰 리스트
-        Optional<Store> optionalStore = findStore(storeId);
-        Store store = optionalStore.get();
-
-        Page<StoreReview> reviewPage = reviewRepository.findAllByStore(store, PageRequest.of(page, 10));
-        return reviewPage;
-    }
-
-    @Transactional(readOnly = true)
     public Page<Mission> getMissionList(Long storeId, Integer page) { // 가게 미션 리스트
         Optional<Store> optionalStore = findStore(storeId);
         Store store = optionalStore.get();
