@@ -1,10 +1,0 @@
-
-W
-java:S1118":Add a private constructor to hide the implicit public one.(ò½€—8€Êœ±Â1
-`
-java:S1128"CRemove this unused import 'umc.spring.repository.MemberRepository'.(ÅéÂ¼8ê±Â1
-d
-java:S1128"BRemove this unused import 'umc.spring.repository.StoreRepository'.(È¦àüÿÿÿÿ8ê±Â1
-b
-java:S1128
-"FRemove this unused import 'javax.persistence.EntityNotFoundException'.(©ÿ€8ê±Â1
