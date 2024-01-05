@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/umc
+    username: root
+    password: ssw030422123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: never
+  jpa:
+    properties:
+        hibernate:
+          hbm2ddl:
+            auto: update #기존 테이블을 모두 없애버리고 새로 만들게 됨 (DB 처음 만드는 것이 아니면 UPDATE로 하기)
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+        default_batch_fetch_size: 1000
+    generate-ddl: true
+    # Hibernate SQL 출력을 위한 로그 레벨 설정
+    logging:
+      level:
+        org:
+          hibernate:
+            SQL: DEBUG
+            type:
+              descriptor:
+                sql: TRACE
