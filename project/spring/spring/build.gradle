@@ -11,7 +11,7 @@ java {
 	sourceCompatibility = '11'
 }
 
-jar{
+jar{ //이걸 해야 깃허브 액션을 통해 잘 빌드가 됨
 	enabled = false
 }
 
