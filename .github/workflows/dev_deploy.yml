@@ -21,11 +21,11 @@ jobs:
           distribution: 'adopt' # (5).자바 설치 (배포판 (어떤 툴))
 
       - name: Grant execute permission for gradlew
-        run: chmod +x project/spring/gradlew
+        run: chmod +x ./gradlew
         shell: bash # (6).권한 부여
 
       - name: Build with Gradle
-        run: project/spring//gradlew clean build -x test
+        run: ./gradlew clean build -x test
         shell: bash # (7).build 시작
 
       - name: Get current time
