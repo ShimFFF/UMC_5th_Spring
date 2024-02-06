@@ -4,21 +4,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import umc.spring.ApiPayload.code.status.ErrorStatus;
+import umc.spring.aws.s3.AmazonS3Manager;
 import umc.spring.converter.ReviewConverter;
 import umc.spring.converter.StoreConverter;
-import umc.spring.domain.Region;
-import umc.spring.domain.Store;
-import umc.spring.domain.StoreReview;
-import umc.spring.domain.Users;
+import umc.spring.domain.*;
 import umc.spring.exception.handler.MemberHandler;
 import umc.spring.exception.handler.RegoinHandler;
 import umc.spring.exception.handler.StoreHandler;
-import umc.spring.repository.MemberRepository;
-import umc.spring.repository.RegionRepository;
-import umc.spring.repository.ReviewRepository;
-import umc.spring.repository.StoreRepository;
+import umc.spring.repository.*;
 import umc.spring.web.dto.review.ReviewRequest;
 import umc.spring.web.dto.store.StoreRequest;
+
+import java.util.UUID;
 
 
 @Service
@@ -29,6 +26,9 @@ public class StoreService {
     private final MemberRepository memberRepository;
     private final RegionRepository regionRepository;
     private final ReviewRepository reviewRepository;
+    private final UuidRepository uuidRepository;
+    private final AmazonS3Manager s3Manager;
+
 
     @Transactional
     public Store add(StoreRequest.addDTO request)  {
@@ -49,7 +49,7 @@ public class StoreService {
     }
 
     @Transactional
-    public void writeReiew(ReviewRequest.writeDTO request)  {
+    public String writeReiew(ReviewRequest.writeDTO request)  {
         //User 객체를 찾아서 user에 저장하는 코드
         Users users = memberRepository.findById(request.getUserId())
                 .orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));
@@ -59,6 +59,15 @@ public class StoreService {
 
 
         StoreReview newReview = ReviewConverter.toReview(request, users, store);
+
+        String uuid = UUID.randomUUID().toString();
+        Uuid savedUuid = uuidRepository.save(Uuid.builder()
+                .uuid(uuid).build());
+
+        String pictureUrl = s3Manager.uploadFile(s3Manager.generateReviewKeyName(savedUuid), request.getReviewPicture());
+
         reviewRepository.save(newReview);
+
+        return pictureUrl;
     }
 }

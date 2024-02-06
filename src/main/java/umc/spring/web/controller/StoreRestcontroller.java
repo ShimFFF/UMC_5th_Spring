@@ -53,11 +53,10 @@ public class StoreRestcontroller {
             @Parameter(name = "content",description = "리뷰 내용",required = true),
             @Parameter(name = "score",description = "리뷰 점수",required = true)
     })
-    @PostMapping("/review/write") // 리뷰 작성 api
+    @PostMapping(value = "/review/write", consumes = "multipart/form-data") // 리뷰 작성 api
     public ApiResponse<String>
     join(@RequestBody @Valid ReviewRequest.writeDTO request){
-        storeService.writeReiew(request);
-        return ApiResponse.onSuccess("리뷰 작성 완료");
+        return ApiResponse.onSuccess(storeService.writeReiew(request));
     }
 
     @Operation(summary = "특정 가게의 리뷰 목록 조회 API",description = "특정 가게의 리뷰들의 목록을 조회하는 API이며, 페이징을 포함합니다. query String 으로 page 번호를 주세요")

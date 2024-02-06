@@ -1,4 +1,4 @@
-package umc.spring.Config;
+package umc.spring.config;
 
 // AppConfig.java
 import org.springframework.context.annotation.Configuration;

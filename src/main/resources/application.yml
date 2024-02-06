@@ -27,3 +27,16 @@ spring:
             type:
               descriptor:
                 sql: TRACE
+  cloud:
+    aws:
+      s3:
+        bucket: umc-5th
+        path:
+          review: review
+      region:
+        static: ap-northeast-2
+      stack:
+        auto: false
+      credentials:
+        accessKey: ${AWS_ACCESS_KEY_ID}
+        secretKey: ${AWS_SECRET_ACCESS_KEY}
